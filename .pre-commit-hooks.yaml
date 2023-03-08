@@ -1,0 +1,11 @@
+- id: composer-validate
+  name: Composer Validate
+  description: Validates a composer.json and composer.lock
+  entry: hooks/composer-validate.sh
+  language: script
+  files: composer\.(json|lock)$
+  pass_filenames: false
+  args:
+    - "validate"
+    - "--check-lock"
+    - "--strict"
